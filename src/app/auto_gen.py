@@ -13,7 +13,6 @@ def run(playwright: Playwright) -> None:
     page.get_by_role("textbox", name="Город, адрес, метро, район или шоссе").fill("санкт-петербург")
     page.get_by_title("Санкт-Петербург", exact=True).first.click()
     page.get_by_role("link", name="Найти").click()
-    page1.close()
     page.get_by_test_id("SearchBlock").get_by_role("link", name="Купить").click()
     page.get_by_role("button", name="Квартиру в новостройке и вторичке").click()
     page.get_by_test_id("SearchBlock").get_by_text("Коммерческая").click()
@@ -39,7 +38,6 @@ def run(playwright: Playwright) -> None:
     page2.close()
     page.get_by_role("link", name="..").click()
     page.get_by_role("link", name="..").click()
-    page.get_by_text("1..101112131415161718192021222324..").click(button="right")
 
     # ---------------------
     context.close()
